@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import MainPage from './pages/MainPage';
 import ProfilePage from './pages/ProfilePage';
 import InfoPage from './pages/InfoPage';
+import TablePage from './pages/TablePage';
 import LoginPage from "./pages/LoginPage";
 import './App.css';
 
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/" element={<MainPage />} />
             <Route path="/profile" element={<ProfilePage isAdmin={isAdmin} />} />
             <Route path="/info" element={<InfoPage />} />
+            <Route path="/table" element={<TablePage isAdmin={isAdmin} setIsAdmin={setIsAdmin} />} />
             <Route path="/login" element={<LoginPage setIsAdmin={setIsAdmin} />} />
           </Routes>
         </div>
