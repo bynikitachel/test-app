@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import TableCell from './TableCell';
 
-const TableRow = ({ member }) => {
+const TableRow = ({ member, changeCounterFunc }) => {
 
     const [isActiveRow, setIsActiveRow] = useState(false);
 
     const toggleRow = () => {
+        changeCounterFunc(!isActiveRow);
         setIsActiveRow(!isActiveRow);
     };
 

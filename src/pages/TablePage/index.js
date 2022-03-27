@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import TableRow from './TableRow';
 import superHeroes from '../../JSON/superHeroes.json';
 import './index.css';
@@ -7,6 +7,8 @@ import './index.css';
 const TablePage = ({ isAdmin }) => {
 
     const navigate = useNavigate();
+    const [counter, setCounter] = useState(0);
+    const allRows = superHeroes.members.length;
 
     useEffect(() => {
         if (!isAdmin) {
@@ -14,8 +16,12 @@ const TablePage = ({ isAdmin }) => {
         }
     }, [isAdmin, navigate]);
 
-    const newTableHead = (key) => {
+    const changeCounterFunc = (changeCounter) => {
+        const newCounter = changeCounter ? counter + 1 : counter - 1;
+        setCounter(newCounter);
+    }
 
+    const newTableHead = (key) => {
         let index = 0;
         let newKey;
 
@@ -49,6 +55,7 @@ const TablePage = ({ isAdmin }) => {
     const getTableRows = () => {
         return superHeroes.members.map((member, i) => (
             <TableRow
+                changeCounterFunc={changeCounterFunc}
                 key={i}
                 member={member}
             />
@@ -62,6 +69,10 @@ const TablePage = ({ isAdmin }) => {
         <div>
             <h1>Table</h1>
             <div className='container-table'>
+                <div className='container-info'>
+                    <div>Selected rows: {counter}</div>
+                    <div>All rows: {allRows}</div>
+                </div>
                 <table>
                     <thead>
                         <tr className='table-head'>
