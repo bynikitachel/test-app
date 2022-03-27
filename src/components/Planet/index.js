@@ -6,18 +6,16 @@ const Planet = () => {
         return planetsInfo.planets.map((planet, i) => (
             <div key={i} className='planet'>
                 <div className='container-planet'>
-                    <div className={`image-planet ${planet.name}`}></div>
+                    <div className={`image-planet ${planet.name}`}/>
                 </div>
                 <div className='description-planet'>
                     {planet.description}
                 </div>
-            </div >
+            </div>
         ));
     };
 
-    const planets = renderPlanets();
-
-    return planets;
+    return renderPlanets();
 }
 
 export default Planet;

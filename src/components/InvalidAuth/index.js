@@ -1,6 +1,6 @@
 import './index.css';
 
-function InvalidAuth() {
+const InvalidAuth = () => {
     return (
         <p className="auth-error">
             Invalid email or password!

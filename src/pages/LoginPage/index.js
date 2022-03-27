@@ -28,7 +28,7 @@ const LoginPage = ({ setIsAdmin }) => {
 
         } else {
             setIsInvalid(true);
-        };
+        }
     };
 
     return (

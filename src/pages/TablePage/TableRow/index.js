@@ -25,7 +25,7 @@ const TableRow = ({ member, changeCounterFunc }) => {
 
     return (
         <tr className={classRow}>
-            <td><input type='checkbox' className='row-checkbox' onClick={() => toggleRow()}></input></td>
+            <td><input type='checkbox' className='row-checkbox' onClick={() => toggleRow()}/></td>
             {tableTds}
         </tr>
 

@@ -1,7 +1,6 @@
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import './index.css';
 
-
 const NavBar = ({ isAdmin, setIsAdmin }) => {
 
     const navigate = useNavigate();
@@ -13,7 +12,7 @@ const NavBar = ({ isAdmin, setIsAdmin }) => {
             setIsAdmin(JSON.parse(localStorage.getItem('isAuthAdmin')));
         } else {
             navigate('/login');
-        };
+        }
     };
 
     return (
@@ -23,20 +22,23 @@ const NavBar = ({ isAdmin, setIsAdmin }) => {
                 <li><NavLink to="/info">Info</NavLink></li>
                 <li><NavLink to="/profile">Profile</NavLink></li>
                 {isAdmin &&
-                    <li><NavLink to="/table">Table</NavLink></li>
+                    <>
+                        <li><NavLink to="/table">Table</NavLink></li>
+                        <li><NavLink to="/calendar">Calendar</NavLink></li>
+                    </>
                 }
             </ul>
             <div className='container-log'>
                 {isAdmin &&
                     <div className='user-part'>
                         <Link to="/profile" className="user-link">Admin
-                            {isAdmin && <div className='avatar'></div>}
+                            {isAdmin && <div className='avatar'/>}
                         </Link>
                     </div>
                 }
                 <button className='auth-button' onClick={() => authButton()}>{authButtonText}</button>
             </div>
-        </div >
+        </div>
     );
 }
 

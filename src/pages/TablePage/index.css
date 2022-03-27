@@ -11,17 +11,15 @@
 }
 
 .container-info div:nth-child(1) {
-    background: rgb(88, 70, 70);
+    background: rgb(100, 81, 81);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 
 .container-info div:nth-child(2) {
     background: rgb(136, 101, 101);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 
 .container-info div {
@@ -36,7 +34,6 @@ table {
     border-collapse: collapse;
     border-radius: 20px;
     display: block;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 
 .table-head {

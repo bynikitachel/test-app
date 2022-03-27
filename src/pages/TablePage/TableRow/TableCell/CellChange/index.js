@@ -34,7 +34,7 @@ const CellChange = ({ setIsChanged, cellValue, setCellValue }) => {
                 ref={textarea}
                 value={newCellValue}
                 onChange={e => setNewCellValue(e.target.value)}
-            ></textarea>
+            />
             <div className='container-textarea-buttons'>
                 <button className='cell-ok' onClick={() => handleOkChange()}>OK</button>
                 <button className='cell-cancel' onClick={() => handleCloseChange()}>CANCEL</button>
