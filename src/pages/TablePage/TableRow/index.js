@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import TableCell from './TableCell';
 
 const TableRow = ({ member }) => {
+
+    const [isActiveRow, setIsActiveRow] = useState(false);
+
+    const toggleRow = () => {
+        setIsActiveRow(!isActiveRow);
+    };
 
     const getTableTds = () => {
         return Object.values(member).map((value, i) => {
@@ -9,12 +16,15 @@ const TableRow = ({ member }) => {
             }
             return <TableCell key={i} value={value} />
         })
-    }
+    };
 
-    const tableTds = getTableTds()
+    const tableTds = getTableTds();
+
+    const classRow = isActiveRow ? 'active-row' : 'row';
 
     return (
-        <tr>
+        <tr className={classRow}>
+            <td><input type='checkbox' className='row-checkbox' onClick={() => toggleRow()}></input></td>
             {tableTds}
         </tr>
 
