@@ -1,0 +1,35 @@
+.container-flag {
+    background-color: rgb(70, 65, 65);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    padding: 40px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.red {
+    background: red;
+}
+
+.orange {
+    background: orange;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.green {
+    background: green;
+}
+
+.blue {
+    background: blue;
+}
+
+.purple {
+    background: purple;
+}
+
+.flag {
+    height: 40px;
+}
