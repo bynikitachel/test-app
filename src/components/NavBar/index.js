@@ -21,12 +21,7 @@ const NavBar = ({ isAdmin, setIsAdmin }) => {
                 <li><NavLink to="/">Main</NavLink></li>
                 <li><NavLink to="/info">Info</NavLink></li>
                 <li><NavLink to="/profile">Profile</NavLink></li>
-                {isAdmin &&
-                    <>
-                        <li><NavLink to="/table">Table</NavLink></li>
-                        <li><NavLink to="/calendar">Calendar</NavLink></li>
-                    </>
-                }
+                {isAdmin && <li><NavLink to="/table">Table</NavLink></li>}
             </ul>
             <div className='container-log'>
                 {isAdmin &&
